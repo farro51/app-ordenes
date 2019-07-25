@@ -59,6 +59,10 @@ export class OrdenComponent implements OnInit {
         this.onClose.next(orden as Orden);
         this.bsModalRef.hide();
       }
+    }, error => {
+      this.resultado.titulo = 'error';
+      this.resultado = error.message;
+      this.openModal2(template);
     });
   }
 
